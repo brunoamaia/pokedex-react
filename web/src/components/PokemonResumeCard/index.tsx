@@ -1,3 +1,5 @@
+import { PokemonResumeCardStyles } from './styles'
+
 interface Types {
   slot: number
   type: {
@@ -13,27 +15,39 @@ interface PokemonResumeProps {
   }
 }
 export function PokemonResumeCard({ data }: PokemonResumeProps) {
-  let quantidade = ''
   let types: string[] = []
   if (data.types.length > 1) {
     for (let i = 0; i < data.types.length; i++) {
       types[i] = data.types[i].type.name
     }
-    quantidade = 'mais de 1'
   } else {
     types = [data.types[0].type.name]
   }
 
+  let number: string = ''
+  if (data.id < 10) {
+    number = `00${data.id}`
+  } else if (data.id < 100) {
+    number = `0${data.id}`
+  } else {
+    number = `${data.id}`
+  }
+
   return (
-    <div>
-      <p>
-        {data.name} | {data.id}
-      </p>
-      <img src={data.image} alt="imagem do pokemon" />
-      {types.map((type) => (
-        <p key={type}>{type}</p>
-      ))}
-      <p>{quantidade}</p>
-    </div>
+    <PokemonResumeCardStyles>
+      <div className="image-area">
+        <p>#{number}</p>
+        <img src={data.image} alt="imagem do pokemon" />
+      </div>
+
+      <div className="types">
+        {types.map((type) => (
+          <p className={type} key={type}>
+            {type}
+          </p>
+        ))}
+      </div>
+      <p className="name">{data.name}</p>
+    </PokemonResumeCardStyles>
   )
 }

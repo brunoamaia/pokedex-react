@@ -1,6 +1,6 @@
 import Routes from './routes'
 
-import { GlobalStyle } from './CSSReset'
+import { GlobalStyle } from './GlobalStyle'
 
 function App() {
   return (
