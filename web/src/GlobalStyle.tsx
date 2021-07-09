@@ -18,6 +18,14 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 16px 'Roboto', sans-serif;
   }
 
+  button {
+    border-radius: 15px;
+    padding: 0 15px;
+    border: 4px solid ${theme.border.pokedexBody};
+    cursor: pointer;
+  }
+
+
 
   .bug {
     background-color: ${theme.type.bug};

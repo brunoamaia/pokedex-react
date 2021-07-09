@@ -1,5 +1,6 @@
-import { Link, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
+import { Navbar } from '../../components/common/Navbar'
 import { PokemonCard } from '../../components/pages/PokemonDetails/PokemonCard'
 
 import { PokemonDetailsStyles } from './styles'
@@ -19,10 +20,7 @@ export function PokemonDetails() {
 
   return (
     <PokemonDetailsStyles>
-      <h1>Detalhes, sala: {pokemonId}</h1>
-      <Link to="/">
-        <h2>volta para a home</h2>
-      </Link>
+      <Navbar isReading={true} />
       <PokemonCard id={pokemonId} />
     </PokemonDetailsStyles>
   )

@@ -25,7 +25,7 @@ type PokemonResumeProps = Array<{
 }>
 
 export function PokemonList() {
-  const limit = 500
+  const limit = 20
   const offset = 0
   const [pokemonList, setPokemonList] = useState<PokemonListProps[]>()
   const [pokemonResume, setPokemonResume] = useState<PokemonResumeProps>()
