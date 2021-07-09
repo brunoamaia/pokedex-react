@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import api from '../../../services/api'
 
-import { PokemonResumeCard } from '../../PokemonResumeCard'
+import { PokemonResumeCard } from '../PokemonResumeCard'
 
 import { PokemonListStyles } from './styles'
 
