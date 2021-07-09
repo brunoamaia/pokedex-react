@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react'
 import { ImageStyles } from './styles'
 
-import LeftArrow from '../../../../assets/img/left-arrow.svg'
-import RightArrow from '../../../../assets/img/right-arrow.svg'
-import { useEffect, useState } from 'react'
+import LeftArrow from '../../../../../assets/img/left-arrow.svg'
+import RightArrow from '../../../../../assets/img/right-arrow.svg'
 
 interface ImageParams {
   image: {

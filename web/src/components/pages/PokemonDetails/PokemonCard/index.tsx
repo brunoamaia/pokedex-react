@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 
-import api from '../../../services/api'
+import api from '../../../../services/api'
 import { About } from './About'
 import { Header } from './Header'
 import { ImagePokemon } from './ImagePokemon'
 import { StatsContainer } from './StatsContainer'
 import { Types } from './Types'
 
-import Pokeball from '../../../assets/img/Pokeball.png'
+import Pokeball from '../../../../assets/img/Pokeball.png'
 
 import { PokemonCardStyles } from './styles'
 

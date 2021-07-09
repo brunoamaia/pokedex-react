@@ -1,6 +1,6 @@
 import { Link, useHistory, useParams } from 'react-router-dom'
 
-import { PokemonCard } from '../../components/PokemonDetails/PokemonCard'
+import { PokemonCard } from '../../components/pages/PokemonDetails/PokemonCard'
 
 import { PokemonDetailsStyles } from './styles'
 

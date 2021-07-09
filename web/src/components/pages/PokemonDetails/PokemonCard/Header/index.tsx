@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import { HeaderStyles } from './styles'
 
-import ArrowLeft from '../../../../assets/img/arrow-left.svg'
+import ArrowLeft from '../../../../../assets/img/arrow-left.svg'
 
 interface HeaderParams {
   id: number

@@ -1,7 +1,7 @@
 import { AboutStyles } from './styles'
 
-import Height from '../../../../assets/img/height.png'
-import Weight from '../../../../assets/img/weight.png'
+import Height from '../../../../../assets/img/height.png'
+import Weight from '../../../../../assets/img/weight.png'
 
 interface AboutParams {
   abilities: Array<string>

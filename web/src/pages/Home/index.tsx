@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { PokemonList } from '../../components/home/PokemonList'
+import { PokemonList } from '../../components/pages/home/PokemonList'
 import { HomeStyles } from './styles'
 
 type DataProps = {
