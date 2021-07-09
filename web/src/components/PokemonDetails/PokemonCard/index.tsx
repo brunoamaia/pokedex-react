@@ -7,6 +7,8 @@ import { ImagePokemon } from './ImagePokemon'
 import { StatsContainer } from './StatsContainer'
 import { Types } from './Types'
 
+import Pokeball from '../../../assets/img/Pokeball.png'
+
 import { PokemonCardStyles } from './styles'
 
 interface PokemonAllDataProps {
@@ -89,6 +91,7 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
     <PokemonCardStyles>
       {pokemonInfos !== undefined && (
         <div className={`details-container ${pokemonInfos.types[0]}`}>
+          <img className="pokeball" src={Pokeball} alt="" />
           <Header id={pokemonInfos.id} name={pokemonInfos.name} />
 
           <div className="infos-container">
