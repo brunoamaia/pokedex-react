@@ -13,7 +13,7 @@ export function PokemonDetails() {
   const pokemonId = Number(params.id)
   const router = useHistory()
 
-  if (pokemonId < 1 || pokemonId > 1000) {
+  if (pokemonId < 1 || pokemonId > 898) {
     router.push('/')
   }
 

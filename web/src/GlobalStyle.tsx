@@ -100,4 +100,66 @@ export const GlobalStyle = createGlobalStyle`
     color: #FFF;
   }
 
+
+  .bug-txt {
+    color: ${theme.type.bug};
+  }
+  .dark-txt {
+    color: ${theme.type.dark};
+  }
+  .dragon-txt {
+    color: ${theme.type.dragon};
+  }
+  .electric-txt {
+    color: ${theme.type.electric};
+  }
+  .fairy-txt {
+    color: ${theme.type.fairy};
+  }
+  .fighting-txt {
+    color: ${theme.type.fighting};
+  }
+  .fire-txt {
+    color: ${theme.type.fire};
+  }
+  .flying-txt {
+    color: ${theme.type.flying};
+  }
+  .ghost-txt {
+    color: ${theme.type.ghost};
+  }
+  .grass-txt {
+    color: ${theme.type.grass};
+  }
+  .ground-txt {
+    color: ${theme.type.ground};
+  }
+  .ice-txt {
+    color: ${theme.type.ice};
+  }
+  .normal-txt {
+    color: ${theme.type.normal};
+  }
+  .poison-txt {
+    color: ${theme.type.poison};
+  }
+  .psychic-txt {
+    color: ${theme.type.psychic};
+  }
+  .rock-txt {
+    color: ${theme.type.rock};
+  }
+  .shadow-txt {
+    color: ${theme.type.shadow};
+  }
+  .steel-txt {
+    color: ${theme.type.steel};
+  }
+  .unknown-txt {
+    color: ${theme.type.unknown};
+  }
+  .water-txt {
+    color: ${theme.type.water};
+  }
+
 `

@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react'
 
 import api from '../../../services/api'
+import { About } from './About'
+import { Header } from './Header'
+import { ImagePokemon } from './ImagePokemon'
+import { StatsContainer } from './StatsContainer'
+import { Types } from './Types'
 
 import { PokemonCardStyles } from './styles'
 
@@ -83,45 +88,22 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
   return (
     <PokemonCardStyles>
       {pokemonInfos !== undefined && (
-        <div className={pokemonInfos.types[0]}>
-          <h2>{pokemonInfos.name}</h2>
-          <div className="picture">
-            <img src={pokemonInfos.image.front} alt="" />
-            <img src={pokemonInfos.image.back} alt="" />
-          </div>
-          {pokemonInfos.types.map((type) => (
-            <p key={type}> {type} </p>
-          ))}
+        <div className={`details-container ${pokemonInfos.types[0]}`}>
+          <Header id={pokemonInfos.id} name={pokemonInfos.name} />
 
-          <br />
-          <p>Height: {pokemonInfos.height / 10} m</p>
-          <p>Weight: {pokemonInfos.weight}</p>
-
-          <br />
-          <p>Moves</p>
-          {pokemonInfos.abilities.map((move) => (
-            <p key={move}> {move} </p>
-          ))}
-
-          <br />
-          <span>Base Stats</span>
-          <div className="stats">
-            <p>ATK</p> <p>{pokemonInfos.stats.attack}</p>
-          </div>
-          <div className="stats">
-            <p>DEF</p> <p>{pokemonInfos.stats.defense}</p>
-          </div>
-          <div className="stats">
-            <p>HP</p> <p>{pokemonInfos.stats.hp}</p>
-          </div>
-          <div className="stats">
-            <p>SATK</p> <p>{pokemonInfos.stats.specialAttack}</p>
-          </div>
-          <div className="stats">
-            <p>SDEF</p> <p>{pokemonInfos.stats.specialDefense}</p>
-          </div>
-          <div className="stats">
-            <p>SPD</p> <p>{pokemonInfos.stats.speed}</p>
+          <div className="infos-container">
+            <ImagePokemon image={pokemonInfos.image} />
+            <Types types={pokemonInfos.types} />
+            <About
+              abilities={pokemonInfos.abilities}
+              height={pokemonInfos.height}
+              types={pokemonInfos.types}
+              weight={pokemonInfos.weight}
+            />
+            <StatsContainer
+              stats={pokemonInfos.stats}
+              types={pokemonInfos.types}
+            />
           </div>
         </div>
       )}
