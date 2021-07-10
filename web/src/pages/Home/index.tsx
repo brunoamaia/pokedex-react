@@ -1,5 +1,5 @@
 // import { useSelector } from 'react-redux'
-import { PokemonList } from '../../components/pages/home/PokemonList'
+import { PokemonList } from '../../components/pagesComponents/home/PokemonList'
 import { Navbar } from '../../components/common/Navbar'
 
 import { HomeStyles } from './styles'

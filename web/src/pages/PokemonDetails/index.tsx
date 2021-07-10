@@ -1,7 +1,8 @@
 import { useHistory, useParams } from 'react-router-dom'
 
+import { BodyPokedex } from '../../components/common/BodyPokedex'
 import { Navbar } from '../../components/common/Navbar'
-import { PokemonCard } from '../../components/pages/PokemonDetails/PokemonCard'
+import { PokemonCard } from '../../components/pagesComponents/PokemonDetails/PokemonCard'
 
 import { PokemonDetailsStyles } from './styles'
 
@@ -25,6 +26,7 @@ export function PokemonDetails() {
   return (
     <PokemonDetailsStyles>
       <Navbar isReading={true} />
+      <BodyPokedex />
       <PokemonCard id={pokemonId} />
     </PokemonDetailsStyles>
   )
