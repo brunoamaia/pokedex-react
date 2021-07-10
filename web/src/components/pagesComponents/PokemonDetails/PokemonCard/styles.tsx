@@ -2,10 +2,9 @@ import styled from 'styled-components'
 
 export const PokemonCardStyles = styled.div`
   position: relative;
-  height: 590px;
+  height: 570px;
   width: 360px;
   padding: 10px;
-  margin: 30px auto;
   border-radius: 14px;
   text-align: center;
   background-color: #f8f8f8;

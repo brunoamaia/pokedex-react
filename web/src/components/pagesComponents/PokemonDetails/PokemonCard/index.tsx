@@ -11,35 +11,32 @@ import Pokeball from '../../../../assets/img/Pokeball.png'
 
 import { PokemonCardStyles } from './styles'
 
-type PokemonAllDataProps =
-  | {
-      abilities: Array<string>
-      height: number
-      id: number
-      image: {
-        front: string
-        back: string
-      }
-      name: string
-      stats: {
-        hp: number
-        attack: number
-        defense: number
-        specialAttack: number
-        specialDefense: number
-        speed: number
-      }
-      types: Array<string>
-      weight: number
-    }
-  | undefined
+interface PokemonAllDataProps {
+  abilities: Array<string>
+  height: number
+  id: number
+  image: {
+    front: string
+    back: string
+  }
+  name: string
+  stats: {
+    hp: number
+    attack: number
+    defense: number
+    specialAttack: number
+    specialDefense: number
+    speed: number
+  }
+  types: Array<string>
+  weight: number
+}
 
 interface PokemonDetailsProps {
   id: number | string
 }
 export function PokemonCard({ id }: PokemonDetailsProps) {
-  const [pokemonInfos, setpokemonInfos] =
-    useState<PokemonAllDataProps>(undefined)
+  const [pokemonInfos, setpokemonInfos] = useState<PokemonAllDataProps>()
   async function SearchPokemonData() {
     api
       .get(`pokemon/${id}`)
@@ -89,6 +86,7 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
         console.log(error.response.status)
       })
   }
+
   useEffect(() => {
     SearchPokemonData()
   }, [id])

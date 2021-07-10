@@ -40,8 +40,10 @@ export function ImagePokemon({ image }: ImageParams) {
   }
 
   useEffect(() => {
+    setImageIsFront(true)
     setImageA(image.front)
     setImageB(image.back)
+    setRotation('')
   }, [image])
 
   return (

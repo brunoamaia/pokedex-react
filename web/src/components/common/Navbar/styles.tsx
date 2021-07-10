@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { theme } from '../../../theme/theme'
 
 export const NavbarStyles = styled.header`
-  display: flex;
-  flex-direction: column;
   width: 1200px;
 
   .header {
@@ -108,43 +106,6 @@ export const NavbarStyles = styled.header`
     }
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 4px solid ${theme.border.pokedexBody};
-    border-bottom: none;
-    background-color: ${theme.background.body.menu};
-
-    padding: 20px 0 10px;
-
-    .reading {
-      display: flex;
-      align-items: center;
-      height: 42px;
-      color: ${theme.text.body.primary};
-    }
-
-    .message {
-      color: ${theme.text.body.primary};
-    }
-
-    form {
-      display: flex;
-      gap: 15px;
-      height: 50px;
-      padding: 0;
-      width: 300px;
-
-      input {
-        border-radius: 15px;
-        padding: 0 10px;
-        width: 300px;
-        border: 4px solid ${theme.border.pokedexBody};
-        color: ${theme.text.body.secondary};
-      }
-    }
-  }
   button {
     background-color: ${theme.border.pokedexBody};
   }

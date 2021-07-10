@@ -2,7 +2,6 @@ import { useHistory, useParams } from 'react-router-dom'
 
 import { BodyPokedex } from '../../components/common/BodyPokedex'
 import { Navbar } from '../../components/common/Navbar'
-import { PokemonCard } from '../../components/pagesComponents/PokemonDetails/PokemonCard'
 
 import { PokemonDetailsStyles } from './styles'
 
@@ -12,7 +11,7 @@ interface URLParams {
 
 export function PokemonDetails() {
   const params = useParams<URLParams>()
-  const pokemonId: number | string = params.id
+  const pokemonId: string = params.id
   const router = useHistory()
 
   if (typeof pokemonId === 'number') {
@@ -26,8 +25,7 @@ export function PokemonDetails() {
   return (
     <PokemonDetailsStyles>
       <Navbar isReading={true} />
-      <BodyPokedex />
-      <PokemonCard id={pokemonId} />
+      <BodyPokedex id={pokemonId} isInHomepage={false} />
     </PokemonDetailsStyles>
   )
 }

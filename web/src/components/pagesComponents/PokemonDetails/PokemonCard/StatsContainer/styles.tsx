@@ -37,7 +37,8 @@ export const StatsStyles = styled.div`
     justify-content: space-between;
 
     p {
-      padding-right: 8px;
+      text-align: left;
+      width: 35px;
     }
   }
 `

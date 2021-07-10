@@ -6,13 +6,9 @@ import { ControllerPagesStyles } from './styles'
 export function ControllerPages() {
   return (
     <ControllerPagesStyles>
-      <div className="display">
-        <div className="pagination">
-          <div className="value">
-            <SelectItensPerPage />
-          </div>
-          <PageIndex limit={10} offsetActually={550} />
-        </div>
+      <div className="pagination">
+        <SelectItensPerPage />
+        <PageIndex limit={10} offsetActually={550} />
       </div>
     </ControllerPagesStyles>
   )
