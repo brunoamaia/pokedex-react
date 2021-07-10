@@ -15,7 +15,9 @@ export function PokemonDetails() {
   const router = useHistory()
 
   if (pokemonId < 1 || pokemonId > 898) {
-    router.push('/')
+    if (pokemonId < 10001 || pokemonId > 10002) {
+      router.push('/')
+    }
   }
 
   return (

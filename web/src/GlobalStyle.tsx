@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #F8F8F8;
+    background-color: #000;
     color: #29292E;
   }
 
@@ -21,7 +21,9 @@ export const GlobalStyle = createGlobalStyle`
   button {
     border-radius: 15px;
     padding: 0 15px;
+    color: ${theme.text.body.primary};
     border: 4px solid ${theme.border.pokedexBody};
+    background-color: ${theme.border.pokedexBody};
     cursor: pointer;
   }
 

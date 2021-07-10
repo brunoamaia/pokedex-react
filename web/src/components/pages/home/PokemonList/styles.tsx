@@ -11,9 +11,11 @@ export const PokemonListStyles = styled.div`
     justify-content: center;
     padding: 0;
     margin: 0 120px;
-    border-radius: 35px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
     background-color: ${theme.background.body.frame};
     border: 5px solid ${theme.border.pokedexBody};
+    border-bottom: none;
     max-height: 500px;
 
     .display {

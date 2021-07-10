@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import api from '../../../../services/api'
 
-import { PokemonResumeCard } from '../PokemonResumeCard'
+import { PokemonResumeCard } from './PokemonResumeCard'
+import { ControllerPages } from './ControllerPages'
 
 import { PokemonListStyles } from './styles'
 
@@ -25,8 +26,8 @@ type PokemonResumeProps = Array<{
 }>
 
 export function PokemonList() {
-  const limit = 20
-  const offset = 0
+  const limit = 100
+  const offset = 800
   const [pokemonList, setPokemonList] = useState<PokemonListProps[]>()
   const [pokemonResume, setPokemonResume] = useState<PokemonResumeProps>()
 
@@ -81,6 +82,7 @@ export function PokemonList() {
           </div>
         </div>
       </div>
+      <ControllerPages />
     </PokemonListStyles>
   )
 }
