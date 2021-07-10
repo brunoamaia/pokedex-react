@@ -11,7 +11,7 @@ export function PageLoading() {
         <div className="dot-b">.</div>
         <div className="dot-c">.</div>
       </h1>
-      <img src={Pokeball} alt="" />
+      <img src={Pokeball} alt="pokebal rotation" />
     </PageLoadingStyles>
   )
 }

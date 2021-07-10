@@ -4,6 +4,7 @@ import { theme } from '../../../theme/theme'
 export const BodyPokedexStyles = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 730px;
   height: calc(100vh - 180px);
   padding: 0 120px 20px;
   background-color: ${theme.background.body.menu};

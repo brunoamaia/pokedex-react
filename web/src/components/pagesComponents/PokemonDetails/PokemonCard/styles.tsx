@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../../../../theme/theme'
 
 export const PokemonCardStyles = styled.div`
   position: relative;
@@ -9,6 +10,14 @@ export const PokemonCardStyles = styled.div`
   text-align: center;
   background-color: #f8f8f8;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+
+  .error-search {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 400px;
+    height: 110%;
+  }
 
   .pokeball {
     position: absolute;
@@ -31,7 +40,7 @@ export const PokemonCardStyles = styled.div`
     margin: 10px;
     border-radius: 10px;
     height: 430px;
-    background-color: #f8f8f8;
+    background-color: ${theme.background.body.frame};
     color: #29292e;
   }
 `

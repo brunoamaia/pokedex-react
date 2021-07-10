@@ -10,6 +10,7 @@ import { Types } from './Types'
 import Pokeball from '../../../../assets/img/Pokeball.png'
 
 import { PokemonCardStyles } from './styles'
+import { ErrorPage } from '../../../common/Error'
 
 interface PokemonAllDataProps {
   abilities: Array<string>
@@ -37,6 +38,7 @@ interface PokemonDetailsProps {
 }
 export function PokemonCard({ id }: PokemonDetailsProps) {
   const [pokemonInfos, setpokemonInfos] = useState<PokemonAllDataProps>()
+  const [errorOcurred, setErrorOcurred] = useState<number | null>(null)
   async function SearchPokemonData() {
     api
       .get(`pokemon/${id}`)
@@ -83,36 +85,44 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
         setpokemonInfos(pokeDetail)
       })
       .catch((error) => {
-        console.log(error.response.status)
+        setErrorOcurred(error.response.status)
       })
   }
 
   useEffect(() => {
     SearchPokemonData()
-  }, [id])
+  }, [id, errorOcurred])
 
   return (
     <PokemonCardStyles>
-      {pokemonInfos !== undefined && (
-        <div className={`details-container ${pokemonInfos.types[0]}`}>
-          <img className="pokeball" src={Pokeball} alt="" />
-          <Header id={pokemonInfos.id} name={pokemonInfos.name} />
-
-          <div className="infos-container">
-            <ImagePokemon image={pokemonInfos.image} />
-            <Types types={pokemonInfos.types} />
-            <About
-              abilities={pokemonInfos.abilities}
-              height={pokemonInfos.height}
-              types={pokemonInfos.types}
-              weight={pokemonInfos.weight}
-            />
-            <StatsContainer
-              stats={pokemonInfos.stats}
-              types={pokemonInfos.types}
-            />
-          </div>
+      {errorOcurred !== null ? (
+        <div className="error-search">
+          <ErrorPage stats={errorOcurred} />
         </div>
+      ) : (
+        <>
+          {pokemonInfos !== undefined && (
+            <div className={`details-container ${pokemonInfos.types[0]}`}>
+              <img className="pokeball" src={Pokeball} alt="" />
+              <Header id={pokemonInfos.id} name={pokemonInfos.name} />
+
+              <div className="infos-container">
+                <ImagePokemon image={pokemonInfos.image} />
+                <Types types={pokemonInfos.types} />
+                <About
+                  abilities={pokemonInfos.abilities}
+                  height={pokemonInfos.height}
+                  types={pokemonInfos.types}
+                  weight={pokemonInfos.weight}
+                />
+                <StatsContainer
+                  stats={pokemonInfos.stats}
+                  types={pokemonInfos.types}
+                />
+              </div>
+            </div>
+          )}
+        </>
       )}
     </PokemonCardStyles>
   )
