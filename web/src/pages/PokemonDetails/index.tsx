@@ -1,6 +1,7 @@
 import { useHistory, useParams } from 'react-router-dom'
 
 import { BodyPokedex } from '../../components/common/BodyPokedex'
+import { Footer } from '../../components/common/Footer'
 import { Navbar } from '../../components/common/Navbar'
 
 import { PokemonDetailsStyles } from './styles'
@@ -26,6 +27,7 @@ export function PokemonDetails() {
     <PokemonDetailsStyles>
       <Navbar isReading={true} />
       <BodyPokedex id={pokemonId} isInHomepage={false} />
+      <Footer />
     </PokemonDetailsStyles>
   )
 }

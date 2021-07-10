@@ -1,8 +1,9 @@
 // import { useSelector } from 'react-redux'
+import { BodyPokedex } from '../../components/common/BodyPokedex'
 import { Navbar } from '../../components/common/Navbar'
+import { Footer } from '../../components/common/Footer'
 
 import { HomeStyles } from './styles'
-import { BodyPokedex } from '../../components/common/BodyPokedex'
 
 // type DataProps = {
 //   data: Array<number>
@@ -18,6 +19,7 @@ export function Home() {
         <p key={data}> {data}</p>
       )) */}
       <BodyPokedex isInHomepage={true} />
+      <Footer />
     </HomeStyles>
   )
 }

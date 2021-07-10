@@ -4,7 +4,7 @@ import { theme } from '../../../theme/theme'
 export const BodyPokedexStyles = styled.div`
   display: flex;
   flex-direction: column;
-  height: 730px; /* ajustar para auto */
+  height: calc(100vh - 180px);
   padding: 0 120px 20px;
   background-color: ${theme.background.body.menu};
   border: 4px solid ${theme.border.pokedexBody};
