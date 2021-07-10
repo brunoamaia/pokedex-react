@@ -20,6 +20,8 @@ export function Navbar({ isReading }: NavbarParams) {
     if (pokemonSearch.trim() === '') {
       return
     }
+
+    setPokemonSearch('')
     router.push(`/${pokemonSearch}`)
   }
   return (

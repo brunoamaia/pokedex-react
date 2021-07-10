@@ -85,7 +85,7 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
   }
   useEffect(() => {
     SearchPokemonData()
-  }, [])
+  }, [id])
 
   return (
     <PokemonCardStyles>
