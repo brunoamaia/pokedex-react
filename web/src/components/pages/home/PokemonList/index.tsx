@@ -66,16 +66,20 @@ export function PokemonList() {
   }, [pokemonList])
   return (
     <PokemonListStyles>
-      <div className="list">
-        {pokemonResume?.length && (
-          <>
-            {pokemonResume.map((pokemon) => (
-              <div key={pokemon.id}>
-                <PokemonResumeCard data={pokemon} />
-              </div>
-            ))}
-          </>
-        )}
+      <div className="frame">
+        <div className="display">
+          <div className="list">
+            {pokemonResume?.length && (
+              <>
+                {pokemonResume.map((pokemon) => (
+                  <div key={pokemon.id}>
+                    <PokemonResumeCard data={pokemon} />
+                  </div>
+                ))}
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </PokemonListStyles>
   )
