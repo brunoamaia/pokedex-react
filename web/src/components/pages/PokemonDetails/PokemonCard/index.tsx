@@ -11,35 +11,39 @@ import Pokeball from '../../../../assets/img/Pokeball.png'
 
 import { PokemonCardStyles } from './styles'
 
-interface PokemonAllDataProps {
-  abilities: Array<string>
-  height: number
-  id: number
-  image: {
-    front: string
-    back: string
-  }
-  name: string
-  stats: {
-    hp: number
-    attack: number
-    defense: number
-    specialAttack: number
-    specialDefense: number
-    speed: number
-  }
-  types: Array<string>
-  weight: number
-}
+type PokemonAllDataProps =
+  | {
+      abilities: Array<string>
+      height: number
+      id: number
+      image: {
+        front: string
+        back: string
+      }
+      name: string
+      stats: {
+        hp: number
+        attack: number
+        defense: number
+        specialAttack: number
+        specialDefense: number
+        speed: number
+      }
+      types: Array<string>
+      weight: number
+    }
+  | undefined
 
 interface PokemonDetailsProps {
-  id: number
+  id: number | string
 }
 export function PokemonCard({ id }: PokemonDetailsProps) {
-  const [pokemonInfos, setpokemonInfos] = useState<PokemonAllDataProps>()
+  const [pokemonInfos, setpokemonInfos] =
+    useState<PokemonAllDataProps>(undefined)
   async function SearchPokemonData() {
-    try {
-      api.get(`pokemon/${id}`).then((response) => {
+    api
+      .get(`pokemon/${id}`)
+      .then((response) => {
         const newdata = response.data
         let movesPokemon = []
         if (newdata.abilities.length > 1) {
@@ -81,7 +85,9 @@ export function PokemonCard({ id }: PokemonDetailsProps) {
 
         setpokemonInfos(pokeDetail)
       })
-    } catch (error) {}
+      .catch((error) => {
+        console.log(error.response.status)
+      })
   }
   useEffect(() => {
     SearchPokemonData()

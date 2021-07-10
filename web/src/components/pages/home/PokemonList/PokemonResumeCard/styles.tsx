@@ -5,6 +5,7 @@ export const PokemonResumeCardStyles = styled.div`
   border-radius: 10px;
   height: 200px;
   padding: 6px;
+  cursor: pointer;
 
   .image-area {
     display: flex;

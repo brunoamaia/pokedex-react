@@ -32,12 +32,15 @@ export function PokemonList() {
   const [pokemonResume, setPokemonResume] = useState<PokemonResumeProps>()
 
   useEffect(() => {
-    try {
-      api.get(`pokemon?limit=${limit}&offset=${offset}`).then((response) => {
+    api
+      .get(`pokemon?limit=${limit}&offset=${offset}`)
+      .then((response) => {
         const newdata: DatabaseProps = response.data.results
         setPokemonList(newdata)
       })
-    } catch (error) {}
+      .catch((error) => {
+        console.log(error.response.status)
+      })
   }, [])
 
   async function SearchPokemonData() {

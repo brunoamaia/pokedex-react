@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom'
 import { PokemonResumeCardStyles } from './styles'
 
 interface Types {
@@ -33,8 +34,13 @@ export function PokemonResumeCard({ data }: PokemonResumeProps) {
     number = `${data.id}`
   }
 
+  const router = useHistory()
+  function showPokemon() {
+    router.push(`/${number}`)
+  }
+
   return (
-    <PokemonResumeCardStyles>
+    <PokemonResumeCardStyles onClick={showPokemon}>
       <div className="image-area">
         <p>#{number}</p>
         <img src={data.image} alt="imagem do pokemon" />

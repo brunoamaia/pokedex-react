@@ -11,12 +11,14 @@ interface URLParams {
 
 export function PokemonDetails() {
   const params = useParams<URLParams>()
-  const pokemonId = Number(params.id)
+  const pokemonId: number | string = params.id
   const router = useHistory()
 
-  if (pokemonId < 1 || pokemonId > 898) {
-    if (pokemonId < 10001 || pokemonId > 10002) {
-      router.push('/')
+  if (typeof pokemonId === 'number') {
+    if (pokemonId < 1 || pokemonId > 898) {
+      if (pokemonId < 10001 || pokemonId > 10002) {
+        router.push('/')
+      }
     }
   }
 

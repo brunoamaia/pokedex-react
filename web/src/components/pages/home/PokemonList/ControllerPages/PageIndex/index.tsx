@@ -14,7 +14,6 @@ export function PageIndex({ limit, offsetActually }: PageIndexParams) {
   for (let i = 0; i < quantityPages; i++) {
     offsets.push(limit * i)
   }
-  console.log(offsets)
   console.log(`offset: ${offsetActually} | pagina: ${pageActually}`)
 
   function handleChangePage(offset: number) {
