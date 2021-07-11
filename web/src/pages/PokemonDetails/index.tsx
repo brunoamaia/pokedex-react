@@ -1,6 +1,12 @@
-import { Link, useHistory, useParams } from 'react-router-dom'
+// @ts-nocheck
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
-import { PokemonCard } from '../../components/PokemonDetails/PokemonCard'
+import { BodyPokedex } from '../../components/common/BodyPokedex'
+import { Footer } from '../../components/common/Footer'
+import { Navbar } from '../../components/common/Navbar'
+import { setPokemonId } from '../../redux/reducers/pokemomId'
 
 import { PokemonDetailsStyles } from './styles'
 
@@ -10,20 +16,18 @@ interface URLParams {
 
 export function PokemonDetails() {
   const params = useParams<URLParams>()
-  const pokemonId = Number(params.id)
-  const router = useHistory()
+  const pokemonId: string = params.id
+  const dispatch = useDispatch()
 
-  if (pokemonId < 1 || pokemonId > 898) {
-    router.push('/')
-  }
+  useEffect(() => {
+    dispatch(setPokemonId(pokemonId))
+  }, [pokemonId])
 
   return (
     <PokemonDetailsStyles>
-      <h1>Detalhes, sala: {pokemonId}</h1>
-      <Link to="/">
-        <h2>volta para a home</h2>
-      </Link>
-      <PokemonCard id={pokemonId} />
+      <Navbar isReading={true} />
+      <BodyPokedex isInHomepage={false} />
+      <Footer />
     </PokemonDetailsStyles>
   )
 }

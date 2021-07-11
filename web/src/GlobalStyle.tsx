@@ -10,13 +10,23 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #F8F8F8;
+    background-color: #bbb;
     color: #29292E;
   }
 
   body, input, button, textarea {
     font: 400 16px 'Roboto', sans-serif;
   }
+
+  button {
+    border-radius: 15px;
+    padding: 0 15px;
+    color: ${theme.text.body.primary};
+    border: 4px solid ${theme.border.pokedexBody};
+    background-color: ${theme.border.pokedexBody};
+    cursor: pointer;
+  }
+
 
 
   .bug {

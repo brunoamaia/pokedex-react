@@ -3,14 +3,14 @@ import { BodyPokedex } from '../../components/common/BodyPokedex'
 import { Navbar } from '../../components/common/Navbar'
 import { Footer } from '../../components/common/Footer'
 
-import { HomeStyles } from './styles'
+import { ErrorStyles } from './styles'
 
-export function Home() {
+export function Errorpage() {
   return (
-    <HomeStyles>
+    <ErrorStyles>
       <Navbar isReading={false} />
-      <BodyPokedex isInHomepage={true} />
+      <BodyPokedex isInHomepage={false} isErrorPage={true} />
       <Footer />
-    </HomeStyles>
+    </ErrorStyles>
   )
 }

@@ -1,4 +1,27 @@
 export const theme = {
+  background: {
+    body: {
+      body: '#CA1C36',
+      bodyReflex: '#CE3E51',
+      frame: '#f8f8f8',
+      lightBlue: '#07acc9',
+      lightBlueReading: '#01DBFF',
+      lightGreen: '#30F454',
+      lightRed: '#FE1A55',
+      lightYellow: '#F9EE60',
+      menu: '#991226',
+    },
+    display: {},
+  },
+  border: {
+    pokedexBody: '#252621',
+  },
+  text: {
+    body: {
+      primary: '#FFF',
+      secondary: '#252525',
+    },
+  },
   type: {
     bug: '#3B9950',
     dark: '#242726',

@@ -1,22 +1,23 @@
-import { AnyAction, createStore } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
 
-interface DataProps {
-  data: number[]
-}
+import apiHomeDataReducer from '../reducers/ApiReducer/homepageData'
+import apiPokemonListReducer from '../reducers/ApiReducer/listPokemom'
+import apiPokemonDetailReducer from '../reducers/ApiReducer/pokemonDetailsData'
+import isLoadingReducer from '../reducers/isLoading'
+import limitReducer from '../reducers/limit'
+import notHasPokemonReducer from '../reducers/notHasPokemon'
+import offsetReducer from '../reducers/offset'
+import pokemonIdReducer from '../reducers/pokemomId'
 
-const apiData: DataProps = {
-  data: [1, 2, 3, 4, 5],
-}
-
-function ApiReducer(state = apiData, action: AnyAction) {
-  switch (action.type) {
-    case 'ADD_VALUE':
-      return { ...state, data: [...state.data, action.value] }
-    default:
-      return state
-  }
-}
-
-const store = createStore(ApiReducer)
-
-export default store
+export default configureStore({
+  reducer: {
+    apiHomeData: apiHomeDataReducer,
+    apipokemonList: apiPokemonListReducer,
+    apiPokemonDetail: apiPokemonDetailReducer,
+    isLoading: isLoadingReducer,
+    limit: limitReducer,
+    notHasPokemon: notHasPokemonReducer,
+    offset: offsetReducer,
+    pokemonId: pokemonIdReducer,
+  },
+})
