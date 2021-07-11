@@ -14,4 +14,19 @@ export const ControllerPagesStyles = styled.div`
     justify-content: space-between;
     padding: 10px 0;
   }
+
+  @media screen and (max-width: 800px) {
+    height: 90px;
+    padding: 0;
+    .pagination {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    word-wrap: wrap;
+    height: 120px;
+  }
 `

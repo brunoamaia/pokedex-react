@@ -11,4 +11,11 @@ export const ErrorStyles = styled.div`
     text-align: center;
     color: #555;
   }
+
+  @media screen and (max-width: 600px) {
+    .message {
+      padding: 0 20px;
+    }
+    width: 100%;
+  }
 `
