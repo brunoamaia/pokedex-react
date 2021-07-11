@@ -9,6 +9,13 @@ export const SelectItensPerPageStyles = styled.form`
     height: 30px;
     background-color: ${theme.border.pokedexBody};
     color: ${theme.text.body.primary};
+    transition: background-color 0.4s;
+
+    :disabled {
+      background-color: ${theme.background.body.body};
+      border: 4px solid ${theme.background.body.body};
+      cursor: not-allowed;
+    }
   }
 
   fieldset {

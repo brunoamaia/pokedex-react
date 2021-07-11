@@ -26,7 +26,11 @@ export function SelectItensPerPage() {
 
   return (
     <SelectItensPerPageStyles>
-      <button type="button" onClick={handleChangeItemsPerPage}>
+      <button
+        disabled={!itensPerPage}
+        type="button"
+        onClick={handleChangeItemsPerPage}
+      >
         Change
       </button>
 
