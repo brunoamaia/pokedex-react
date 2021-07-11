@@ -13,23 +13,21 @@ interface PokemonListProps {
   name: string
   url: string
 }
-type DatabaseProps = Array<PokemonListProps>
 
-interface Types {
-  slot: number
-  type: {
-    name: string
-  }
-}
 type PokemonResumeProps = Array<{
   id: number
   image: string
   name: string
-  types: Array<Types>
+  types: Array<{
+    slot: number
+    type: {
+      name: string
+    }
+  }>
 }>
 
 type ReduxParams = {
-  pokemonList: DatabaseProps
+  pokemonList: Array<PokemonListProps>
   homeData: PokemonResumeProps
   limit: number
   offset: number
@@ -43,12 +41,12 @@ export function PokemonList() {
   const pokemonResume: PokemonResumeProps = useSelector(
     (state: ReduxParams) => state.homeData
   )
-  const offset: number = useSelector((state: ReduxParams) => state.offset)
   const limit: number = useSelector((state: ReduxParams) => state.limit)
+  const offset: number = useSelector((state: ReduxParams) => state.offset)
 
   useEffect(() => {
     dispatch(getPokemonList(limit, offset))
-  }, [dispatch])
+  }, [dispatch, limit, offset])
 
   useEffect(() => {
     dispatch(getDataHomepage(pokemonList))
