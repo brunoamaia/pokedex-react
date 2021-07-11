@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom'
 import { FormEvent, useState } from 'react'
 
-import Search from '../../../../assets/img/search.svg'
 import Back from '../../../../assets/img/arrow-left.svg'
+import Search from '../../../../assets/img/search.svg'
 
 import { HeaderStyles } from './styles'
 
@@ -22,7 +22,7 @@ export function Header({ isInHomepage }: HeaderParams) {
     }
 
     setPokemonSearch('')
-    router.push(`/${pokemonSearch}`)
+    router.push(`/pokemon/${pokemonSearch}`)
   }
 
   return (

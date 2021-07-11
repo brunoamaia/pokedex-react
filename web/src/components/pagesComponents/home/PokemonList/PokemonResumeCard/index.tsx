@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom'
+
 import { PokemonResumeCardStyles } from './styles'
 
 interface Types {
@@ -36,7 +37,7 @@ export function PokemonResumeCard({ data }: PokemonResumeProps) {
 
   const router = useHistory()
   function showPokemon() {
-    router.push(`/${number}`)
+    router.push(`/pokemon/${data.name}`)
   }
 
   return (

@@ -11,14 +11,6 @@ export const PokemonCardStyles = styled.div`
   background-color: #f8f8f8;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 
-  .error-search {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 400px;
-    height: 110%;
-  }
-
   .pokeball {
     position: absolute;
     top: 20px;

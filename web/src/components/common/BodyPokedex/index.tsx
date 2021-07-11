@@ -1,21 +1,20 @@
-import { PokemonList } from '../../pagesComponents/home/PokemonList'
-import { PokemonCard } from '../../pagesComponents/PokemonDetails/PokemonCard'
+import { ControllStateCard } from '../../pagesComponents/PokemonDetails/ControllStateCard'
 import { Header } from './Header'
+import { PokemonList } from '../../pagesComponents/home/PokemonList'
 // import { ErrorPage } from '../Error'
 
 import { BodyPokedexStyles } from './styles'
 
 interface BodyPokedexParams {
-  id?: string
   isInHomepage: boolean
 }
 
-export function BodyPokedex({ id, isInHomepage }: BodyPokedexParams) {
+export function BodyPokedex({ isInHomepage }: BodyPokedexParams) {
   return (
     <BodyPokedexStyles>
       <Header isInHomepage={isInHomepage} />
       <div className="display">
-        {isInHomepage ? <PokemonList /> : <>{id && <PokemonCard id={id} />}</>}
+        {isInHomepage ? <PokemonList /> : <ControllStateCard />}
         {/* <ErrorPage stats={stats} /> */}
       </div>
     </BodyPokedexStyles>

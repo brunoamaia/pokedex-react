@@ -8,7 +8,7 @@ function Routes() {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/:id" component={PokemonDetails} />
+        <Route path="/pokemon/:id" component={PokemonDetails} />
       </Switch>
     </BrowserRouter>
   )
