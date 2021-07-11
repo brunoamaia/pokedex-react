@@ -3,7 +3,7 @@ import { createAction, createReducer } from '@reduxjs/toolkit'
 
 type limitParams = number
 
-const INITIAL_STATE: limitParams = 10
+const INITIAL_STATE: limitParams = 20
 
 export const setLimit = createAction('UPDATE_LIMIT_VALUE')
 
