@@ -3,6 +3,7 @@ import api from '../../../../services/api'
 
 import { addPokemonDetails } from '../../../reducers/ApiReducer/pokemonDetailsData'
 import { endLoading, isLoading } from '../../../reducers/isLoading'
+import { foundPokemon, notFoundPokemon } from '../../../reducers/notHasPokemon'
 
 interface PokemonAllDataProps {
   abilities: Array<string>
@@ -28,6 +29,7 @@ interface PokemonAllDataProps {
 export const getPokemonDetails = (id: string) => {
   return (dispatch) => {
     dispatch(isLoading())
+    dispatch(foundPokemon())
     api
       .get(`pokemon/${id}`)
       .then((response) => {
@@ -72,8 +74,8 @@ export const getPokemonDetails = (id: string) => {
 
         dispatch(addPokemonDetails(pokeDetail))
       })
-      .catch((error) => {
-        console.log(error)
+      .catch(() => {
+        dispatch(notFoundPokemon())
       })
       .finally(() => {
         dispatch(endLoading())

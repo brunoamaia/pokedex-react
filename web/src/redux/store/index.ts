@@ -5,6 +5,7 @@ import apiPokemonListReducer from '../reducers/ApiReducer/listPokemom'
 import apiPokemonDetailReducer from '../reducers/ApiReducer/pokemonDetailsData'
 import isLoadingReducer from '../reducers/isLoading'
 import limitReducer from '../reducers/limit'
+import notHasPokemonReducer from '../reducers/notHasPokemon'
 import offsetReducer from '../reducers/offset'
 import pokemonIdReducer from '../reducers/pokemomId'
 
@@ -15,6 +16,7 @@ export default configureStore({
     apiPokemonDetail: apiPokemonDetailReducer,
     isLoading: isLoadingReducer,
     limit: limitReducer,
+    notHasPokemon: notHasPokemonReducer,
     offset: offsetReducer,
     pokemonId: pokemonIdReducer,
   },

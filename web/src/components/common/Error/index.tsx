@@ -11,7 +11,7 @@ export function ErrorPage({ stats }: ErrorParams) {
     <ErrorStyles>
       <div className="message">
         <h1>Something went wrong.</h1>
-        <p>Verify the name or number, or back to home.</p>
+        <p>Verify the name or number, back to home, or reload the page.</p>
       </div>
       <img src={Error} alt="a image of pikachu surprise" />
       {stats && <span>Error: {stats}</span>}

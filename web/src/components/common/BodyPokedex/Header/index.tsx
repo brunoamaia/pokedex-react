@@ -1,8 +1,13 @@
-import { useHistory } from 'react-router-dom'
+// @ts-nocheck
 import { FormEvent, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import Back from '../../../../assets/img/arrow-left.svg'
 import Search from '../../../../assets/img/search.svg'
+
+import { foundPokemon } from '../../../../redux/reducers/notHasPokemon'
+import { setPokemonId } from '../../../../redux/reducers/pokemomId'
 
 import { HeaderStyles } from './styles'
 
@@ -11,18 +16,26 @@ interface HeaderParams {
 }
 
 export function Header({ isInHomepage }: HeaderParams) {
+  const dispatch = useDispatch()
   const router = useHistory()
   const [pokemonSearch, setPokemonSearch] = useState('')
 
-  async function handleSearchPokemon(event: FormEvent) {
+  function handleSearchPokemon(event: FormEvent) {
     event.preventDefault()
 
     if (pokemonSearch.trim() === '') {
       return
     }
 
+    dispatch(foundPokemon())
+    dispatch(setPokemonId(pokemonSearch))
     setPokemonSearch('')
     router.push(`/pokemon/${pokemonSearch}`)
+  }
+
+  function handleBacktoHomepage() {
+    dispatch(foundPokemon())
+    router.push(`/`)
   }
 
   return (
@@ -34,7 +47,7 @@ export function Header({ isInHomepage }: HeaderParams) {
           <button
             className="reading"
             type="button"
-            onClick={() => router.push(`/`)}
+            onClick={handleBacktoHomepage}
           >
             <img src={Back} alt="back to home page" />
             <p>Back to home</p>

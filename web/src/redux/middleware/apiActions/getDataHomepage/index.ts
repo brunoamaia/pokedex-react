@@ -3,6 +3,7 @@ import api from '../../../../services/api'
 
 import { addDataToHomepage } from '../../../reducers/ApiReducer/homepageData'
 import { endLoading } from '../../../reducers/isLoading'
+import { notFoundPokemon } from '../../../reducers/notHasPokemon'
 
 type PokemonResumeProps = Array<{
   id: number
@@ -20,8 +21,8 @@ export const getDataHomepage = (pokemonList) => {
   return async (dispatch) => {
     if (pokemonList !== undefined && pokemonList.length > 1) {
       const searchInfo = pokemonList.map((pokemon) =>
-        api.get(`pokemon/${pokemon.name}`).catch((error) => {
-          console.log(error.response.status)
+        api.get(`pokemon/${pokemon.name}`).catch(() => {
+          dispatch(notFoundPokemon())
         })
       )
       const pokemonInfo = await Promise.all(searchInfo)

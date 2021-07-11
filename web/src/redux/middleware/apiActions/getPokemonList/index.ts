@@ -3,6 +3,7 @@ import api from '../../../../services/api'
 
 import { addPokemonList } from '../../../reducers/ApiReducer/listPokemom'
 import { isLoading } from '../../../reducers/isLoading'
+import { notFoundPokemon } from '../../../reducers/notHasPokemon'
 
 interface PokemonListProps {
   name: string
@@ -19,8 +20,8 @@ export const getPokemonList = (limit: number, offset: number) => {
         const newList: DatabaseProps = response.data.results
         dispatch(addPokemonList(newList))
       })
-      .catch((error) => {
-        console.log(error.response.status)
+      .catch(() => {
+        dispatch(notFoundPokemon())
       })
   }
 }
