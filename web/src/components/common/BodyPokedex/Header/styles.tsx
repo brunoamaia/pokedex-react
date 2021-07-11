@@ -39,4 +39,9 @@ export const HeaderStyles = styled.nav`
       color: ${theme.text.body.secondary};
     }
   }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `
