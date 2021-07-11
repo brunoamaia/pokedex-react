@@ -13,8 +13,11 @@ const resizeDot = keyframes`
 export const PageLoadingStyles = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  align-items: center;
   text-align: center;
+  gap: 50px;
+  max-height: 50%;
+  max-width: 50%;
 
   h1 {
     display: flex;

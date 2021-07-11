@@ -2,6 +2,7 @@
 import api from '../../../../services/api'
 
 import { addPokemonList } from '../../../reducers/ApiReducer/listPokemom'
+import { isLoading } from '../../../reducers/isLoading'
 
 interface PokemonListProps {
   name: string
@@ -11,6 +12,7 @@ type DatabaseProps = Array<PokemonListProps>
 
 export const getPokemonList = (limit: number, offset: number) => {
   return (dispatch) => {
+    dispatch(isLoading())
     api
       .get(`pokemon?limit=${limit}&offset=${offset}`)
       .then((response) => {

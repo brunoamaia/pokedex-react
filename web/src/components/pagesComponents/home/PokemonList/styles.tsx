@@ -6,6 +6,7 @@ export const PokemonListStyles = styled.div`
   padding: 0;
   width: 100%;
   height: 100%;
+
   .list-container {
     overflow-y: scroll;
     height: 100%;
@@ -18,5 +19,12 @@ export const PokemonListStyles = styled.div`
       justify-content: center;
       gap: 10px;
     }
+  }
+
+  .loading-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
   }
 `

@@ -2,6 +2,7 @@
 import api from '../../../../services/api'
 
 import { addDataToHomepage } from '../../../reducers/ApiReducer/homepageData'
+import { endLoading } from '../../../reducers/isLoading'
 
 type PokemonResumeProps = Array<{
   id: number
@@ -35,6 +36,7 @@ export const getDataHomepage = (pokemonList) => {
         }
       }
       dispatch(addDataToHomepage(newdata))
+      dispatch(endLoading())
     }
   }
 }

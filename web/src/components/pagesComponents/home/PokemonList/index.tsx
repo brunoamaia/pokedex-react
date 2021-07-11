@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import { PokemonResumeCard } from './PokemonResumeCard'
 import { ControllerPages } from './ControllerPages'
+import { PageLoading } from '../../../common/PageLoading'
 
 import { PokemonListStyles } from './styles'
 
@@ -29,20 +30,20 @@ type PokemonResumeProps = Array<{
 type ReduxParams = {
   pokemonList: Array<PokemonListProps>
   homeData: PokemonResumeProps
+  isLoading: boolean
   limit: number
   offset: number
 }
 
 export function PokemonList() {
   const dispatch = useDispatch()
-  const pokemonList: Array<PokemonListProps> = useSelector(
-    (state: ReduxParams) => state.pokemonList
-  )
-  const pokemonResume: PokemonResumeProps = useSelector(
-    (state: ReduxParams) => state.homeData
-  )
-  const limit: number = useSelector((state: ReduxParams) => state.limit)
-  const offset: number = useSelector((state: ReduxParams) => state.offset)
+  const pokemonList = useSelector((state: ReduxParams) => state.pokemonList)
+  const pokemonResume = useSelector((state: ReduxParams) => state.homeData)
+  const isLoading = useSelector((state: ReduxParams) => state.isLoading)
+  const limit = useSelector((state: ReduxParams) => state.limit)
+  const offset = useSelector((state: ReduxParams) => state.offset)
+
+  console.log(isLoading)
 
   useEffect(() => {
     dispatch(getPokemonList(limit, offset))
@@ -55,17 +56,25 @@ export function PokemonList() {
   return (
     <PokemonListStyles>
       <div className="list-container">
-        <div className="list">
-          {pokemonResume?.length && (
-            <>
-              {pokemonResume.map((pokemon) => (
-                <div key={pokemon.id}>
-                  <PokemonResumeCard data={pokemon} />
-                </div>
-              ))}
-            </>
-          )}
-        </div>
+        {isLoading ? (
+          <div className="loading-page">
+            <PageLoading />
+          </div>
+        ) : (
+          <>
+            <div className="list">
+              {pokemonResume?.length && (
+                <>
+                  {pokemonResume.map((pokemon) => (
+                    <div key={pokemon.id}>
+                      <PokemonResumeCard data={pokemon} />
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
       <ControllerPages />
     </PokemonListStyles>
