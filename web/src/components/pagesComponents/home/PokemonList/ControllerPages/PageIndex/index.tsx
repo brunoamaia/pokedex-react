@@ -31,7 +31,6 @@ export function PageIndex() {
         <>
           {offsets.map((offset, index) => (
             <>
-              {console.log(`index: ${index} | pageActually: ${pageActually}`)}
               <button
                 key={index}
                 onClick={() => handleChangePage(offset)}
