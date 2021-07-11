@@ -1,8 +1,21 @@
+// @ts-nocheck
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getPokemonList } from '../../../../../../redux/middleware/apiActions/getPokemonList'
+import { setLimit } from '../../../../../../redux/reducers/limit'
+import { setOffset } from '../../../../../../redux/reducers/offset'
 
 import { SelectItensPerPageStyles } from './styles'
 
+type ReduxParams = {
+  limit: number
+  offset: number
+}
 export function SelectItensPerPage() {
+  const dispatch = useDispatch()
+  const limit: number = useSelector((state: ReduxParams) => state.limit)
+  const offset: number = useSelector((state: ReduxParams) => state.offset)
+
   const [itensPerPage, setItensPerPage] = useState('')
 
   const options = [
@@ -13,8 +26,11 @@ export function SelectItensPerPage() {
   ]
 
   function handleChangeItemsPerPage() {
-    console.log(itensPerPage)
+    dispatch(setLimit(itensPerPage))
+    dispatch(setOffset(0))
+    dispatch(getPokemonList(limit, offset))
   }
+
   return (
     <SelectItensPerPageStyles>
       <button type="button" onClick={handleChangeItemsPerPage}>

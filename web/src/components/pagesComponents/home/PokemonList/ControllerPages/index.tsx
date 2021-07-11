@@ -8,7 +8,7 @@ export function ControllerPages() {
     <ControllerPagesStyles>
       <div className="pagination">
         <SelectItensPerPage />
-        <PageIndex limit={10} offsetActually={550} />
+        <PageIndex />
       </div>
     </ControllerPagesStyles>
   )

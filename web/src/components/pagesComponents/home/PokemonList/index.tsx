@@ -28,22 +28,23 @@ type PokemonResumeProps = Array<{
   types: Array<Types>
 }>
 
-type DataProps = {
+type ReduxParams = {
   pokemonList: DatabaseProps
   homeData: PokemonResumeProps
+  limit: number
+  offset: number
 }
 
 export function PokemonList() {
   const dispatch = useDispatch()
   const pokemonList: Array<PokemonListProps> = useSelector(
-    (state: DataProps) => state.pokemonList
+    (state: ReduxParams) => state.pokemonList
   )
   const pokemonResume: PokemonResumeProps = useSelector(
-    (state: DataProps) => state.homeData
+    (state: ReduxParams) => state.homeData
   )
-
-  const offset = 800
-  const limit = 100
+  const offset: number = useSelector((state: ReduxParams) => state.offset)
+  const limit: number = useSelector((state: ReduxParams) => state.limit)
 
   useEffect(() => {
     dispatch(getPokemonList(limit, offset))

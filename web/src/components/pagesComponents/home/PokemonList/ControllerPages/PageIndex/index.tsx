@@ -1,23 +1,29 @@
-// import { useState } from 'react'
-
+// @ts-nocheck
+import { useDispatch, useSelector } from 'react-redux'
+import { getPokemonList } from '../../../../../../redux/middleware/apiActions/getPokemonList'
+import { setOffset } from '../../../../../../redux/reducers/offset'
 import { PageIndexStyles } from './styles'
 
-interface PageIndexParams {
+type ReduxParams = {
   limit: number
-  offsetActually: number
+  offset: number
 }
+export function PageIndex() {
+  const dispatch = useDispatch()
+  const offset: number = useSelector((state: ReduxParams) => state.offset)
+  const limit: number = useSelector((state: ReduxParams) => state.limit)
+  console.log(`limit: ${limit} | offset: ${offset}`)
 
-export function PageIndex({ limit, offsetActually }: PageIndexParams) {
   const quantityPages = Math.ceil(900 / limit)
-  const pageActually = offsetActually / limit + 1
+  const pageActually = offset / limit + 1
   const offsets: Array<number> = []
   for (let i = 0; i < quantityPages; i++) {
     offsets.push(limit * i)
   }
-  console.log(`offset: ${offsetActually} | pagina: ${pageActually}`)
 
   function handleChangePage(offset: number) {
-    console.log(`limit=${limit} | offset=${offset}`)
+    dispatch(setOffset(offset))
+    dispatch(getPokemonList(limit, offset))
   }
 
   return (
