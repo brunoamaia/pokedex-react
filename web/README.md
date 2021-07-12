@@ -1,9 +1,4 @@
 # [Pokedex](https://pokedex-react-bruno.vercel.app/)
-
-
-![Screenshot](https://raw.githubusercontent.com/brunoamaia/pokedex-react/main/web/public/meta.png)
-
-
  Aplication with react to consume data from pokeapi.This aplication use the tools:
 
  - [React](https://reactjs.org/)
@@ -15,7 +10,7 @@
  - [Typescript](https://www.typescriptlang.org/)
  - [Eslint](https://eslint.org/)
 
-To start this application, open the "web" folder and execute the next commands:
+To start this application, execute the next commands:
 
 - To install libraries:
 
