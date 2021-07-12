@@ -18,6 +18,13 @@ export const PokemonResumeCardStyles = styled.div`
     border-radius: 8px;
     background-color: #fff;
 
+    img {
+      transition: 0.2s ease-in-out;
+      :hover {
+        transform: scale(1.5);
+      }
+    }
+
     p {
       position: absolute;
       top: 5px;
