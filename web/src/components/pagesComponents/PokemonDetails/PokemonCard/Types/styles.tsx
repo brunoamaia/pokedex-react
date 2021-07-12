@@ -4,7 +4,7 @@ export const TypesStyles = styled.div`
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding: 50px 0 10px;
+  padding: 60px 0 10px;
 
   p {
     display: flex;

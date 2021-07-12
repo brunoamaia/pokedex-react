@@ -52,7 +52,7 @@ export function ImagePokemon({ image }: ImageParams) {
         <img src={LeftArrow} alt="change position of pokemon" />
       </button>
       <div className={`card ${rotation}`}>
-        <div className={`image`}>
+        <div className="image">
           <div className="front">
             <img src={imageA} alt="" />
           </div>

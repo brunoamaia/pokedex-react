@@ -52,4 +52,60 @@ export const AboutStyles = styled.div`
       gap: 0.5rem;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    height: 120px;
+    .data {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0;
+
+      > div {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        min-height: 10px;
+        height: 30px;
+        > p {
+          font-size: 14px;
+        }
+      }
+      .height {
+        border: none;
+      }
+
+      .moves {
+        gap: 10px;
+        .value {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    height: 150px;
+
+    .moves {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .value {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+        max-width: 60px;
+        p {
+          line-height: 80%;
+        }
+      }
+    }
+  }
 `

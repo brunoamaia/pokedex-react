@@ -21,6 +21,16 @@ export const ProgressBarStyles = styled.div`
     height: 10px;
   }
 
+  @media screen and (max-width: 400px) {
+    width: 140px;
+  }
+  @media screen and (max-width: 350px) {
+    width: 110px;
+  }
+  @media screen and (max-width: 300px) {
+    width: 90px;
+  }
+
   .bug.manually {
     background-color: #ade9ba;
     .progress-value {
