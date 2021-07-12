@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { theme } from '../../../../../theme/theme'
 
 const rotationToBack = keyframes`
  0% { transform: rotateY(0deg) scaleX(1); }
@@ -21,9 +22,10 @@ export const ImageStyles = styled.div`
   width: 100%;
 
   .controll {
-    margin-bottom: 30px;
+    margin-bottom: 0;
     cursor: pointer;
-    background-color: transparent;
+    background-color: ${theme.border.pokedexBody};
+    padding: 5px 20px;
     border: none;
   }
 
@@ -38,10 +40,13 @@ export const ImageStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
   }
 
   .card.rotation-to-back {

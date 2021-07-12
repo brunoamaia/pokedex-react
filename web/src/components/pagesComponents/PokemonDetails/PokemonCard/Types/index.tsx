@@ -9,8 +9,7 @@ export function Types({ types }: TypesParams) {
     <TypesStyles>
       {types.map((type) => (
         <p key={type} className={type}>
-          {' '}
-          {type}{' '}
+          {type}
         </p>
       ))}
     </TypesStyles>

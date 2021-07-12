@@ -1,8 +1,4 @@
-import { Link } from 'react-router-dom'
-
 import { HeaderStyles } from './styles'
-
-import ArrowLeft from '../../../../../assets/img/arrow-left.svg'
 
 interface HeaderParams {
   id: number
@@ -20,9 +16,6 @@ export function Header({ id, name }: HeaderParams) {
   }
   return (
     <HeaderStyles>
-      <Link to={'/'}>
-        <img src={ArrowLeft} alt="back to home page" />
-      </Link>
       <h2>{name}</h2>
       <span>#{number}</span>
     </HeaderStyles>

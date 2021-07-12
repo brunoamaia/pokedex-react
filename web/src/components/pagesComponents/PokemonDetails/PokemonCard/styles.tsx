@@ -14,7 +14,7 @@ export const PokemonCardStyles = styled.div`
   .pokeball {
     position: absolute;
     top: 20px;
-    right: 15px;
+    left: 15px;
     height: 20%;
   }
 
@@ -34,5 +34,20 @@ export const PokemonCardStyles = styled.div`
     height: 430px;
     background-color: ${theme.background.body.frame};
     color: #29292e;
+  }
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    .details-container {
+      justify-content: flex-start;
+      overflow-y: scroll;
+      border-radius: 0;
+      padding: 10px;
+    }
   }
 `

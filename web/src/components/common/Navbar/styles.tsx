@@ -134,6 +134,11 @@ export const NavbarStyles = styled.header`
     }
   }
 
+  @media screen and (max-width: 500px) {
+    .header {
+      height: 80px;
+    }
+  }
   @media screen and (max-width: 450px) {
     .main {
       height: 50px;
