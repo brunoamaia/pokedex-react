@@ -1,4 +1,4 @@
-import { ControllStateCard } from '../../pagesComponents/PokemonDetails/ControllStateCard'
+import { ControlStateCard } from '../../pagesComponents/PokemonDetails/ControlStateCard'
 import { ErrorPage } from '../Error'
 import { Header } from './Header'
 import { PokemonList } from '../../pagesComponents/home/PokemonList'
@@ -25,7 +25,7 @@ export function BodyPokedex({ isErrorPage, isInHomepage }: BodyPokedexParams) {
         {notHasPokemon || isErrorPage ? (
           <ErrorPage />
         ) : (
-          <>{isInHomepage ? <PokemonList /> : <ControllStateCard />}</>
+          <>{isInHomepage ? <PokemonList /> : <ControlStateCard />}</>
         )}
       </div>
     </BodyPokedexStyles>

@@ -11,7 +11,7 @@ type ReduxParams = {
   pokemonId: string
 }
 
-export function ControllStateCard() {
+export function ControlStateCard() {
   const dispatch = useDispatch()
   const isLoading = useSelector((state: ReduxParams) => state.isLoading)
   const pokemonId = useSelector((state: ReduxParams) => state.pokemonId)

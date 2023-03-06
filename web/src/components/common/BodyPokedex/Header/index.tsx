@@ -7,7 +7,7 @@ import Back from '../../../../assets/img/arrow-left.svg'
 import Search from '../../../../assets/img/search.svg'
 
 import { foundPokemon } from '../../../../redux/reducers/notHasPokemon'
-import { setPokemonId } from '../../../../redux/reducers/pokemomId'
+import { setPokemonId } from '../../../../redux/reducers/pokemonId'
 
 import { HeaderStyles } from './styles'
 

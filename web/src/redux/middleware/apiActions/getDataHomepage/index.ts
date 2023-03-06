@@ -27,16 +27,16 @@ export const getDataHomepage = (pokemonList) => {
       )
       const pokemonInfo = await Promise.all(searchInfo)
 
-      const newdata: PokemonResumeProps = []
+      const newData: PokemonResumeProps = []
       for (let i = 0; i < pokemonInfo.length; i++) {
-        newdata[i] = {
+        newData[i] = {
           id: pokemonInfo[i].data.id,
           image: pokemonInfo[i].data.sprites.front_default,
           name: pokemonInfo[i].data.name,
           types: pokemonInfo[i].data.types,
         }
       }
-      dispatch(addDataToHomepage(newdata))
+      dispatch(addDataToHomepage(newData))
       dispatch(endLoading())
     }
   }

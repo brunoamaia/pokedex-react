@@ -5,7 +5,7 @@ import { Footer } from '../../components/common/Footer'
 
 import { ErrorStyles } from './styles'
 
-export function Errorpage() {
+export function ErrorPage() {
   return (
     <ErrorStyles>
       <Navbar isReading={false} />

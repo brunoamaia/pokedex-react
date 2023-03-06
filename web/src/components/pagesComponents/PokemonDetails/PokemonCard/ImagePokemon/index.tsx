@@ -17,7 +17,7 @@ export function ImagePokemon({ image }: ImageParams) {
   const [imageB, setImageB] = useState(image.back)
   const [rotation, setRotation] = useState('')
 
-  function timetoChangeImage(isRotationToBack: Boolean) {
+  function timeToChangeImage(isRotationToBack: Boolean) {
     if (isRotationToBack) {
       setImageA(image.back)
       setImageB(image.front)
@@ -31,11 +31,11 @@ export function ImagePokemon({ image }: ImageParams) {
     if (imageIsFront) {
       setImageIsFront(false)
       setRotation('rotation-to-back')
-      setTimeout(timetoChangeImage, 500, true)
+      setTimeout(timeToChangeImage, 500, true)
     } else {
       setImageIsFront(true)
       setRotation('rotation-to-front')
-      setTimeout(timetoChangeImage, 500, false)
+      setTimeout(timeToChangeImage, 500, false)
     }
   }
 
@@ -48,7 +48,7 @@ export function ImagePokemon({ image }: ImageParams) {
 
   return (
     <ImageStyles>
-      <button className="controll" onClick={handleChangeImage}>
+      <button className="control" onClick={handleChangeImage}>
         <img src={LeftArrow} alt="change position of pokemon" />
       </button>
       <div className={`card ${rotation}`}>
@@ -61,7 +61,7 @@ export function ImagePokemon({ image }: ImageParams) {
           </div>
         </div>
       </div>
-      <button className="controll" onClick={handleChangeImage}>
+      <button className="control" onClick={handleChangeImage}>
         <img src={RightArrow} alt="change position of pokemon" />
       </button>
     </ImageStyles>

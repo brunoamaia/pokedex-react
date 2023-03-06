@@ -20,7 +20,7 @@ export const ImageStyles = styled.div`
   justify-content: space-around;
   width: 100%;
 
-  .controll {
+  .control {
     margin-bottom: 30px;
     cursor: pointer;
     background-color: transparent;
