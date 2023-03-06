@@ -1,7 +1,7 @@
 // @ts-nocheck
 import api from '../../../../services/api'
 
-import { addPokemonList } from '../../../reducers/ApiReducer/listPokemom'
+import { addPokemonList } from '../../../reducers/ApiReducer/listPokemon'
 import { isLoading } from '../../../reducers/isLoading'
 import { notFoundPokemon } from '../../../reducers/notHasPokemon'
 

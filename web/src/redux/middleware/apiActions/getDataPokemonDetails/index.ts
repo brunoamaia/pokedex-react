@@ -33,43 +33,43 @@ export const getPokemonDetails = (id: string) => {
     api
       .get(`pokemon/${id}`)
       .then((response) => {
-        const newdata = response.data
+        const newData = response.data
         let movesPokemon = []
-        if (newdata.abilities.length > 1) {
-          for (let i = 0; i < newdata.abilities.length; i++) {
-            movesPokemon[i] = newdata.abilities[i].ability.name
+        if (newData.abilities.length > 1) {
+          for (let i = 0; i < newData.abilities.length; i++) {
+            movesPokemon[i] = newData.abilities[i].ability.name
           }
         } else {
-          movesPokemon = [newdata.abilities[0].ability.name]
+          movesPokemon = [newData.abilities[0].ability.name]
         }
 
         let typesPokemon = []
-        if (newdata.types.length > 1) {
-          for (let i = 0; i < newdata.types.length; i++) {
-            typesPokemon[i] = newdata.types[i].type.name
+        if (newData.types.length > 1) {
+          for (let i = 0; i < newData.types.length; i++) {
+            typesPokemon[i] = newData.types[i].type.name
           }
         } else {
-          typesPokemon = [newdata.types[0].type.name]
+          typesPokemon = [newData.types[0].type.name]
         }
         const pokeDetail: PokemonAllDataProps = {
           abilities: movesPokemon,
-          height: newdata.height,
-          id: newdata.id,
+          height: newData.height,
+          id: newData.id,
           image: {
-            front: newdata.sprites.front_default,
-            back: newdata.sprites.back_default,
+            front: newData.sprites.front_default,
+            back: newData.sprites.back_default,
           },
-          name: newdata.name,
+          name: newData.name,
           stats: {
-            hp: newdata.stats[0].base_stat,
-            attack: newdata.stats[1].base_stat,
-            defense: newdata.stats[2].base_stat,
-            specialAttack: newdata.stats[3].base_stat,
-            specialDefense: newdata.stats[4].base_stat,
-            speed: newdata.stats[5].base_stat,
+            hp: newData.stats[0].base_stat,
+            attack: newData.stats[1].base_stat,
+            defense: newData.stats[2].base_stat,
+            specialAttack: newData.stats[3].base_stat,
+            specialDefense: newData.stats[4].base_stat,
+            speed: newData.stats[5].base_stat,
           },
           types: typesPokemon,
-          weight: newdata.weight,
+          weight: newData.weight,
         }
 
         dispatch(addPokemonDetails(pokeDetail))

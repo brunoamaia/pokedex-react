@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import { BodyPokedex } from '../../components/common/BodyPokedex'
 import { Footer } from '../../components/common/Footer'
 import { Navbar } from '../../components/common/Navbar'
-import { setPokemonId } from '../../redux/reducers/pokemomId'
+import { setPokemonId } from '../../redux/reducers/pokemonId'
 
 import { BodyContentStyles } from '../styles'
 

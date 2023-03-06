@@ -17,7 +17,10 @@ export function Footer() {
       >
         <img src={Linkedin} alt="" />
       </Link> */}
-      <Link to={{ pathname: 'https://github.com/brunoamaia/pokedex-react' }} target="_blank">
+      <Link
+        to={{ pathname: 'https://github.com/brunoamaia/pokedex-react' }}
+        target="_blank"
+      >
         <img src={GitHub} alt="" />
       </Link>
     </FooterStyles>

@@ -10,14 +10,14 @@ export function Navbar({ isReading }: NavbarParams) {
       <div className="header">
         <div className="main">
           <div className="border">
-            <div className={`ligth ${isReading ? 'active' : ''}`} />
+            <div className={`light ${isReading ? 'active' : ''}`} />
           </div>
         </div>
         <h1 className="name">POKEDEX</h1>
         <div className="auxiliary">
-          <div className="ligth red" />
-          <div className="ligth yellow" />
-          <div className="ligth green" />
+          <div className="light red" />
+          <div className="light yellow" />
+          <div className="light green" />
         </div>
       </div>
     </NavbarStyles>

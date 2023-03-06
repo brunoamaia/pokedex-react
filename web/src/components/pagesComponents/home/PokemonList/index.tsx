@@ -29,7 +29,7 @@ type PokemonResumeProps = Array<{
 
 type ReduxParams = {
   apiHomeData: PokemonResumeProps
-  apipokemonList: Array<PokemonListProps>
+  apiPokemonList: Array<PokemonListProps>
   isLoading: boolean
   limit: number
   offset: number
@@ -40,7 +40,7 @@ export function PokemonList() {
   const isLoading = useSelector((state: ReduxParams) => state.isLoading)
   const limit = useSelector((state: ReduxParams) => state.limit)
   const offset = useSelector((state: ReduxParams) => state.offset)
-  const pokemonList = useSelector((state: ReduxParams) => state.apipokemonList)
+  const pokemonList = useSelector((state: ReduxParams) => state.apiPokemonList)
   const pokemonResume = useSelector((state: ReduxParams) => state.apiHomeData)
 
   useEffect(() => {

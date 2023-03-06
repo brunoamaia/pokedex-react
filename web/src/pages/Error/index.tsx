@@ -5,7 +5,7 @@ import { Footer } from '../../components/common/Footer'
 
 import { BodyContentStyles } from '../styles'
 
-export function Errorpage() {
+export function ErrorPage() {
   return (
     <BodyContentStyles>
       <Navbar isReading={false} />

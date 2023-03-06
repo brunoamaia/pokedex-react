@@ -21,7 +21,7 @@ export const ImageStyles = styled.div`
   justify-content: space-around;
   width: 100%;
 
-  .controll {
+  .control {
     margin-bottom: 0;
     cursor: pointer;
     background-color: ${theme.border.pokedexBody};

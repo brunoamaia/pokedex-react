@@ -35,7 +35,7 @@ export const NavbarStyles = styled.header`
       background-color: ${theme.border.pokedexBody};
     }
 
-    .ligth {
+    .light {
       height: 85%;
       width: 85%;
       border-radius: 50%;
@@ -72,7 +72,7 @@ export const NavbarStyles = styled.header`
     justify-content: center;
     gap: 20px;
 
-    .ligth {
+    .light {
       position: relative;
       height: 40px;
       width: 40px;
