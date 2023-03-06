@@ -21,4 +21,22 @@ export const BodyPokedexStyles = styled.div`
     background-color: ${theme.background.body.frame};
     overflow: hidden;
   }
+
+  @media screen and (max-width: 1080px) {
+    padding: 0 90px 20px;
+  }
+
+  @media screen and (max-width: 1030px) {
+    padding: 0 70px 20px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 0 40px 20px;
+    min-height: calc(100vh - 150px);
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 0 20px 20px;
+    height: calc(100vh - 130px);
+  }
 `

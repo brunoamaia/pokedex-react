@@ -18,4 +18,8 @@ export const FooterStyles = styled.footer`
       padding-right: 8px;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    height: 50px;
+  }
 `

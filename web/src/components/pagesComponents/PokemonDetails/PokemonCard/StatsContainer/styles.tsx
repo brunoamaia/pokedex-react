@@ -4,6 +4,7 @@ export const StatsStyles = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 19px;
+  padding-bottom: 20px;
 
   span {
     padding: 5px 0 5px;

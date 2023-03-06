@@ -8,7 +8,7 @@ import { Footer } from '../../components/common/Footer'
 import { Navbar } from '../../components/common/Navbar'
 import { setPokemonId } from '../../redux/reducers/pokemonId'
 
-import { PokemonDetailsStyles } from './styles'
+import { BodyContentStyles } from '../styles'
 
 interface URLParams {
   id: string
@@ -24,10 +24,10 @@ export function PokemonDetails() {
   }, [pokemonId])
 
   return (
-    <PokemonDetailsStyles>
+    <BodyContentStyles>
       <Navbar isReading={true} />
       <BodyPokedex isInHomepage={false} />
       <Footer />
-    </PokemonDetailsStyles>
+    </BodyContentStyles>
   )
 }

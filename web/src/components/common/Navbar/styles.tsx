@@ -109,4 +109,85 @@ export const NavbarStyles = styled.header`
   button {
     background-color: ${theme.border.pokedexBody};
   }
+
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 550px) {
+    .main {
+      height: 70px;
+      width: 70px;
+    }
+    .auxiliary {
+      gap: 5px;
+      .ligth {
+        height: 32px;
+        width: 32px;
+        &:after {
+          top: 5px;
+          left: 5px;
+          height: 22px;
+          width: 22px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .header {
+      height: 80px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .main {
+      height: 50px;
+      width: 50px;
+      margin: 0 10px;
+      .active {
+        &:after {
+          top: 10px;
+          left: 10px;
+        }
+      }
+    }
+    .auxiliary {
+      gap: 5px;
+      .ligth {
+        height: 26px;
+        width: 26px;
+        &:after {
+          top: 4px;
+          left: 4px;
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .main {
+      margin: 0 5px;
+    }
+
+    .name {
+      font-size: 30px;
+    }
+    .auxiliary {
+      gap: 3px;
+
+      .ligth {
+        height: 22px;
+        width: 22px;
+
+        &:after {
+          top: 3px;
+          left: 3px;
+          height: 16px;
+          width: 16px;
+        }
+      }
+    }
+  }
 `

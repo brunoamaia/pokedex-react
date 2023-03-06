@@ -42,7 +42,9 @@ export function Header({ isInHomepage }: HeaderParams) {
     <HeaderStyles>
       <div className="message">
         {isInHomepage ? (
-          <p>Search a pokemon or click on your card.</p>
+          <div className="home">
+            <p>Search a pokemon or click on your card.</p>
+          </div>
         ) : (
           <button
             className="reading"
@@ -60,6 +62,7 @@ export function Header({ isInHomepage }: HeaderParams) {
           placeholder="Insert the name or number"
           onChange={(event) => setPokemonSearch(event.target.value)}
           value={pokemonSearch}
+          required
         />
         <button type="submit">
           <img src={Search} alt="search the pokemon" />
